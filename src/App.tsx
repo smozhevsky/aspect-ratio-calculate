@@ -2,7 +2,7 @@ import React from "react";
 import AspectForm from "./components/AspectForm";
 import DialogModal from "./components/dialog/DialogModal";
 import OutputTable from "./components/OutputTable";
-import { getAspectRatio } from "./utils";
+import { getAspectRatio } from "./utils/utils";
 
 function App() {
   const [open, setOpen] = React.useState(false);

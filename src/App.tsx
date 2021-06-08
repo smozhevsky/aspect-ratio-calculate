@@ -1,6 +1,7 @@
 import React from "react";
 import AspectForm from "./components/AspectForm";
 import DialogModal from "./components/dialog/DialogModal";
+import OutputTable from "./components/OutputTable";
 import { getAspectRatio } from "./utils";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <AspectForm onSubmit={handleOnSubmit} />
       <DialogModal open={open} onClose={handleClose} results={results} />
       {/* // вывод результата в Table mui */}
+      <OutputTable results={results} />
     </React.Fragment>
   );
 }

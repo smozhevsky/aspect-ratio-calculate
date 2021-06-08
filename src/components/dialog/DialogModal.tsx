@@ -16,7 +16,7 @@ export default function DialogModal(props: any) {
         <DialogTitle id="alert-dialog-title">aspect ratio result</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            {props.results.length}
+            {`Number of results: ${props.results.length}`}
           </DialogContentText>
         </DialogContent>
       </Dialog>

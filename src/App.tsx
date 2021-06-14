@@ -1,8 +1,16 @@
+import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import AspectForm from "./components/AspectForm";
 import DialogModal from "./components/dialog/DialogModal";
-import OutputTable from "./components/OutputTable";
+import { OutputList } from "./components/output/OutputList";
+import OutputTable from "./components/output/OutputTable";
 import { getAspectRatio } from "./utils/utils";
+
+const useStyles = makeStyles({
+  container: {
+    marginTop: "50px",
+  },
+});
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -17,12 +25,29 @@ function App() {
     setResults(getAspectRatio(+width, +height, +maxWidth));
   };
 
+  const classes = useStyles();
+
   return (
     <React.Fragment>
       <AspectForm onSubmit={handleOnSubmit} />
       <DialogModal open={open} onClose={handleClose} results={results} />
-      {/* // вывод результата в Table mui */}
-      <OutputTable results={results} />
+      {/* if results>0 то отрисовываем */}
+      {/* + useMediaQuery */}
+      {results.length > 0 && (
+        <Grid
+          container
+          className={classes.container}
+          spacing={1}
+          justify="center"
+        >
+          <Grid container item sm={12} md={6} justify="center">
+            <OutputTable results={results} />
+          </Grid>
+          <Grid container item sm={12} md={6} justify="center">
+            <OutputList results={results} />
+          </Grid>
+        </Grid>
+      )}
     </React.Fragment>
   );
 }

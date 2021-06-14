@@ -5,4 +5,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Calculating the aspect ratio based on the width and height values
 
-![demo screen](src\img\preview.jpg)
+<img src="src\img\preview.jpg" width="15%"></img>

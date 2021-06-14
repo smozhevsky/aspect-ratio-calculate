@@ -5,4 +5,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Calculating the aspect ratio based on the width and height values
 
-![demo screen](https://ibb.co/9c9d5NL/preview.jpg)
+![alt text](src\img\preview.jpg "calculate")

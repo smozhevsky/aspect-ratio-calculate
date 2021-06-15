@@ -1,19 +1,20 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    listItems: {
-      listStyleType: "none",
-    },
-  })
-);
+const useStyles = makeStyles({
+  listItems: {
+    listStyleType: "none",
+  },
+  listStyle: {
+    border: "1px solid black",
+  },
+});
 
 export const OutputList = (props: any) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.listStyle}>
       {props.results.map((result: any, index: any) => (
         <ul className={classes.listItems}>
           <li>{`№${index + 1}--${result[0]}/${result[1]}`}</li>

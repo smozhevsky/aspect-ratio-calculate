@@ -31,18 +31,25 @@ function App() {
     <React.Fragment>
       <AspectForm onSubmit={handleOnSubmit} />
       <DialogModal open={open} onClose={handleClose} results={results} />
+<<<<<<< HEAD
       {/* + useMediaQuery */}
+=======
+      {/* TODO: useMediaQuery
+                разобраться с Grid компонентом*/}
+>>>>>>> e3005693a355d8bbdc6579fcbdea7ac74006adaa
       {results.length > 0 && (
         <Grid
           container
+          direction="row"
           className={classes.container}
           spacing={1}
           justify="center"
+          alignItems="center"
         >
-          <Grid container item sm={12} md={6} justify="center">
+          <Grid item sm={12} md={6}>
             <OutputTable results={results} />
           </Grid>
-          <Grid container item sm={12} md={6} justify="center">
+          <Grid item sm={4} md={2}>
             <OutputList results={results} />
           </Grid>
         </Grid>

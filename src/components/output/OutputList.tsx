@@ -1,13 +1,12 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    listItems: {
-      listStyleType: "none",
-    },
-  })
-);
+const useStyles = makeStyles({
+  listItems: {
+    listStyleType: "none",
+    textAlign: "center",
+  },
+});
 
 export const OutputList = (props: any) => {
   const classes = useStyles();

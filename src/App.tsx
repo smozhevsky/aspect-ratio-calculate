@@ -1,5 +1,5 @@
 import { Grid, makeStyles } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import AspectForm from "./components/AspectForm";
 import DialogModal from "./components/dialog/DialogModal";
 import { OutputList } from "./components/output/OutputList";
@@ -13,8 +13,8 @@ const useStyles = makeStyles({
 });
 
 function App() {
-  const [open, setOpen] = React.useState(false);
-  const [results, setResults] = React.useState([]);
+  const [open, setOpen] = useState(false);
+  const [results, setResults] = useState([]);
 
   const handleClose = () => {
     setOpen(false);
@@ -31,7 +31,6 @@ function App() {
     <React.Fragment>
       <AspectForm onSubmit={handleOnSubmit} />
       <DialogModal open={open} onClose={handleClose} results={results} />
-      {/* if results>0 то отрисовываем */}
       {/* + useMediaQuery */}
       {results.length > 0 && (
         <Grid

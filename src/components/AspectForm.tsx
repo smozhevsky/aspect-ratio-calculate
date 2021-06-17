@@ -28,8 +28,10 @@ const useStyles = makeStyles((theme) => ({
 
 const INITIAL_VALUES = { width: "16", height: "9", maxWidth: "40" };
 
+export type VALUES = typeof INITIAL_VALUES;
+
 interface IProps {
-  onSubmit: (values: typeof INITIAL_VALUES) => void;
+  onSubmit: (values: VALUES) => void;
 }
 
 const AspectForm = ({ onSubmit }: IProps) => {

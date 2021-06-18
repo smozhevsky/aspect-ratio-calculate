@@ -31,12 +31,9 @@ function App() {
     <React.Fragment>
       <AspectForm onSubmit={handleOnSubmit} />
       <DialogModal open={open} onClose={handleClose} results={results} />
-<<<<<<< HEAD
       {/* + useMediaQuery */}
-=======
       {/* TODO: useMediaQuery
                 разобраться с Grid компонентом*/}
->>>>>>> e3005693a355d8bbdc6579fcbdea7ac74006adaa
       {results.length > 0 && (
         <Grid
           container

@@ -1,4 +1,4 @@
-import { Grid, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles, useMediaQuery } from "@material-ui/core";
 import React, { useState } from "react";
 import AspectForm from "./components/AspectForm";
 import DialogModal from "./components/dialog/DialogModal";
@@ -26,6 +26,7 @@ function App() {
   };
 
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:600px)");
 
   return (
     <React.Fragment>
@@ -51,6 +52,11 @@ function App() {
           </Grid>
         </Grid>
       )}
+      {/* <div>
+        <OutputTable results={results} />
+        <OutputList results={results} />
+        <span>{`(min-width:600px) matches: ${matches}`}</span>;
+      </div> */}
     </React.Fragment>
   );
 }

@@ -3,6 +3,7 @@ import OutputTable from "./output/OutputTable";
 import { OutputList } from "./output/OutputList";
 import { makeStyles } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
+import { Ratio } from "../App";
 
 const useStyles = makeStyles({
   withMediaQuery: {
@@ -10,26 +11,25 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
   },
+  // +add container
 });
 
-export default function Output(props: any) {
+interface IOutputProps {
+  results: Ratio[];
+}
+
+export default function Output({ results }: IOutputProps) {
   const classes = useStyles();
   const matches: boolean = useMediaQuery("(min-width:600px)");
 
-  if (matches) {
-    return (
-      <div className={classes.withMediaQuery}>
-        <OutputTable results={props.results} />
-        <OutputList results={props.results} />
-      </div>
-    );
-  }
   return (
-    <>
-      <div>
-        <OutputTable results={props.results} />
-        <OutputList results={props.results} />
-      </div>
-    </>
+    <div className={matches ? classes.withMediaQuery : undefined}>
+      <OutputTable results={results} />
+      <OutputList results={results} />
+    </div>
   );
 }
+
+// + addEventListener('resize')...
+// + css (scss)
+// + values of randomizer fetch (0-100)

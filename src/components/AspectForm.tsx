@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik";
 import { Button, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ValidationSchema from "./validation/ValidationSchema";
+import { getParams } from "../utils/utils";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -26,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const INITIAL_VALUES = { width: "16", height: "9", maxWidth: "40" };
+const INITIAL_VALUES = {
+  width: getParams(),
+  height: "",
+  maxWidth: "",
+};
 
 export type VALUES = typeof INITIAL_VALUES;
 

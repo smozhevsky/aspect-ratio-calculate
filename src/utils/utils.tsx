@@ -18,3 +18,13 @@ export const getAspectRatio = (
 
   return ratioResult;
 };
+
+let url =
+  "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new";
+
+export async function getParams() {
+  const response = await fetch(url);
+  const result = await response.json();
+  console.log(result);
+  return result;
+}
